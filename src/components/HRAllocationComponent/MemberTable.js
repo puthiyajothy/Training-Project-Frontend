@@ -38,7 +38,7 @@ export class Allocate extends Component {
 
     fetchProjects() {
         var _this = this;
-        axios.get('http://localhost:8085/defectservices/GetAllproject')
+        axios.get('http://localhost:8085/projectservice/GetAllproject')
         .then(function (response) {
           // handle success
           console.log(response.data);
@@ -52,7 +52,7 @@ export class Allocate extends Component {
       
       fetchEmployee() {
         var _this = this;
-        axios.get('http://localhost:8085/defectservices/GetAllresources')
+        axios.get('http://localhost:8085/projectservice/GetAllresources')
         .then(function (response) {
           // handle success
           console.log(response.data);

@@ -63,7 +63,7 @@ class Modulesubmodule extends Component {
   fetchProject() {
     var _this = this;
     axios
-      .get("http://localhost:8085/defectservices/GetAllproject")
+      .get("http://localhost:8085/projectservice/GetAllproject")
       .then(response => {
         // handle success
         console.log(response);
@@ -86,7 +86,7 @@ class Modulesubmodule extends Component {
 
   //DELETE-METHOD 1 = WORKING
   handleDelete = moduleId => {
-    axios.delete(`http://localhost:8085/defectservices/deleteModuleById/` + moduleId)
+    axios.delete(`http://localhost:8085/projectservice/deleteModuleById/` + moduleId)
       .then(console.log(moduleId))
       .catch(err => console.log(err));
 
@@ -266,7 +266,7 @@ class Modulesubmodule extends Component {
     };
     console.log(ModuleData);
     axios
-      .post("http://localhost:8085/defectservices/createmodule", ModuleData)
+      .post("http://localhost:8085/projectservice/createmodule", ModuleData)
       .then({
         // this.sGetAllmodule();
       })
@@ -286,7 +286,7 @@ class Modulesubmodule extends Component {
   GetAllmodule = () => {
     var _this = this;
     axios
-      .get(`http://localhost:8085/defectservices/FindallMain`)
+      .get(`http://localhost:8085/projectservice/FindallMain`)
       .then(res => {
         let ModuleData = res.data;
         // let SubModuleData=res.data;
@@ -337,7 +337,7 @@ class Modulesubmodule extends Component {
 
     axios
 
-      .get(`http://localhost:8085/defectservices/FindallMain`)
+      .get(`http://localhost:8085/projectservice/FindallMain`)
       .then(res => {
 
         this.setState({
@@ -356,7 +356,7 @@ class Modulesubmodule extends Component {
     console.log(moduleId);
     axios
       .delete(
-        `http://localhost:8085/defectservices/deleteModuleById/` + moduleId
+        `http://localhost:8085/projectservice/deleteModuleById/` + moduleId
       )
       .then(console.log(moduleId))
       .catch(err => console.log(err));

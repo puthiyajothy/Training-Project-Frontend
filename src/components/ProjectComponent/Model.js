@@ -245,7 +245,7 @@ class Model extends React.Component {
 
       axios
         .post(
-          "http://localhost:8085/defectservices/createproject/",
+          "http://localhost:8085/projectservice/createproject",
           projectData
         )
         .then(res => {
@@ -549,3 +549,4 @@ class Model extends React.Component {
   }
 }
 export default Form.create()(Model);
+http://localhost:8085/projectservice/createproject

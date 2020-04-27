@@ -125,7 +125,7 @@ export default class Allocation extends React.Component {
     
       fetchProjects() {
         var _this = this;
-        axios.get('http://localhost:8085/defectservices/GetAllproject')
+        axios.get('http://localhost:8085/projectservice/GetAllproject')
         .then(function (response) {
           // handle success
           console.log(response.data);
@@ -137,7 +137,7 @@ export default class Allocation extends React.Component {
     
       fetchEmployee() {
         var _this = this;
-        axios.get('http://localhost:8085/defectservices/GetAllresources')
+        axios.get('http://localhost:8085/projectservice/GetAllresources')
         .then(function (response) {
           // handle success
           console.log(response.data);
@@ -174,7 +174,7 @@ export default class Allocation extends React.Component {
        // console.log(this.state.filteredItems)
         axios
         .post(
-          "http://localhost:8085/defectservices/saveresource",
+          "http://localhost:8085/projectservice/saveresource",
           this.state.data
         )
         .then(res => console.log(res.data))
@@ -205,7 +205,7 @@ export default class Allocation extends React.Component {
    
     fetchEmployee1() {
       var _this = this;
-      axios.get('http://localhost:8085/defectservices/GetAllresources')
+      axios.get('http://localhost:8085/projectservice/GetAllresources')
         .then(function (response) {
           // handle success
           console.log(response.data);

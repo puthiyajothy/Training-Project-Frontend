@@ -107,7 +107,7 @@ export default class Model extends React.Component {
   handleEdit = (projectId) => {
     this.setState({projectId:projectId});
     axios
-      .get(`http://localhost:8085/defectservices/getProjectById/${projectId}`
+      .get(`http://localhost:8085/projectservice/getProjectById/${projectId}`
       )
       .then(response => {
 
@@ -142,7 +142,7 @@ export default class Model extends React.Component {
     console.log("proojectId");
     console.log("startDate")
 
-    axios.put('http://localhost:8081/defectservices/updateProject/'+ this.state.projectId, obj)
+    axios.put('http://localhost:8085/projectservice/updateProject/'+ this.state.projectId, obj)
       .then(res => {
 
     this.setState({

@@ -49,7 +49,7 @@ export default class App extends React.Component {
   }
   //DELETE-METHOD 1 = WORKING
   handleDelete = projectId => {
-    axios.delete(`http://localhost:8081/defectservices/deleteById/` + projectId)
+    axios.delete(`http://localhost:8085/projectservice/deleteById/` + projectId)
       .then(console.log(projectId))
       .catch(err => console.log(err));
 
@@ -75,7 +75,7 @@ export default class App extends React.Component {
 
     }
     axios
-      .get(`http://localhost:8085/defectservices/GetAllproject`)
+      .get(`http://localhost:8085/projectservice/GetAllproject`)
       .then(res => {
         //const projects = res.data;
         this.setState({ projects: res.data });

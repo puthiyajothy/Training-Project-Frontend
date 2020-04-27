@@ -42,7 +42,7 @@ class ProjectManagerDashboard extends React.Component {
 getHigh(){
 
         axios
-        .get('http://localhost:8085/defectservices/getseverityhigcount')
+        .get('http://localhost:8085/projectservice/getseverityhigcount')
         .then(res=>{
             console.log(res.data)
             this.setState({
@@ -53,7 +53,7 @@ getHigh(){
 
 getMedium(){
     axios
-    .get('http://localhost:8085/defectservices/getseveritymediumcount')
+    .get('http://localhost:8085/projectservice/getseveritymediumcount')
     .then(res=>{
         console.log(res.data)
         this.setState({
@@ -64,7 +64,7 @@ getMedium(){
 
 getLow(){
     axios
-    .get('http://localhost:8085/defectservices/getseveritylowcount')
+    .get('http://localhost:8085/projectservice/getseveritylowcount')
     .then(res=>{
         console.log(res.data)
         this.setState({
@@ -120,7 +120,7 @@ getLow(){
 
     getStatusNew(){
         axios
-        .get('http://localhost:8085/defectservices/getStatusNew')
+        .get('http://localhost:8085/projectservice/getStatusNew')
         .then(res=> {
             this.setState({
                 StatusNew:res.data
@@ -131,7 +131,7 @@ getLow(){
 
     getStatusOpen(){
         axios
-        .get('http://localhost:8085/defectservices/getStatusOpen')
+        .get('http://localhost:8085/projectservice/getStatusOpen')
         .then(res=> {
             this.setState({
                 StatusOpen:res.data
@@ -141,7 +141,7 @@ getLow(){
 
     getStatusClose(){
         axios
-        .get('http://localhost:8085/defectservices/getStatusClose')
+        .get('http://localhost:8085/projectservice/getStatusClose')
         .then(res=> {
             this.setState({
                 StatusClose:res.data
@@ -151,7 +151,7 @@ getLow(){
     }
     getStatusRejected(){
         axios
-        .get('http://localhost:8085/defectservices/getStatusRejected')
+        .get('http://localhost:8085/projectservice/getStatusRejected')
         .then(res=> {
             this.setState({
               StatusRejected:res.data  
@@ -161,7 +161,7 @@ getLow(){
     }
     getStatusReOpen(){
         axios
-        .get('http://localhost:8085/defectservices/getStatusReOpen')
+        .get('http://localhost:8085/projectservice/getStatusReOpen')
         .then(res=> {
             this.setState({
                 StatusReOpen:res.data
@@ -199,7 +199,7 @@ getLow(){
       */
 getHigh1(){
     axios
-        .get('http://localhost:8085/defectservices/gethightcount')
+        .get('http://localhost:8085/projectservice/gethightcount')
         .then(res=> {
             let color=""
             if(3>res.data){
@@ -220,7 +220,7 @@ getHigh1(){
 
 getLow1(){
     axios
-        .get('http://localhost:8085/defectservices/getlowcount')
+        .get('http://localhost:8085/projectservice/getlowcount')
         .then(res=> {
             let color=""
             if(3>res.data){
@@ -240,7 +240,7 @@ getLow1(){
 
 getMedium1(){
     axios
-        .get('http://localhost:8085/defectservices/getcountmedium')
+        .get('http://localhost:8085/projectservice/getcountmedium')
         .then(res=> {
             let color=""
             if(3>res.data){
@@ -301,7 +301,7 @@ getSeverityIndex(){
     }
     getDefectRatio(){
         axios
-        .get('http://localhost:8085/defectservices/getCount')
+        .get('http://localhost:8085/projectservice/getCount')
         .then(res=>{
 
             this.setState({
@@ -312,7 +312,7 @@ getSeverityIndex(){
     }
 
      getdefectcount() {
-        const url = 'http://localhost:8085/defectservices/getTotalDefectCount';
+        const url = 'http://localhost:8085/projectservice/getTotalDefectCount';
         axios.get(url)
     
           .then(response => this.setState({
@@ -324,7 +324,7 @@ getSeverityIndex(){
     
       }
        getdefectdensity(){
-        const url = 'http://localhost:8085/defectservices/getDefectDensity';
+        const url = 'http://localhost:8085/projectservice/getDefectDensity';
         axios.get(url)
     
           .then(response => this.setState({
@@ -338,7 +338,7 @@ getSeverityIndex(){
       gettotaldefectwithRe(){
           var _this=this
         axios
-        .get("http://localhost:8085/defectservices/getAllDefects")
+        .get("http://localhost:8085/projectservice/getAllDefects")
         .then(response => {
           console.warn(response.data);
              var openHigh=0;

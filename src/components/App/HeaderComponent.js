@@ -59,7 +59,7 @@ const menu = (
                     margin: "0",
                     top: "0"
                 }}>
-                    #DT Functionality Defect  with <Tag color="orange">Medium priority</Tag> !
+                    #PM Functionality Defect  with <Tag color="orange">Medium priority</Tag> !
                 </div>
                 <div
                     className="notification-item-time"
@@ -93,7 +93,7 @@ const menu = (
                     margin: "0",
                     top: "0"
                 }}>
-                    #DT UI Defect  with <Tag color="red">High priority</Tag> !
+                    #PM UI Defect  with <Tag color="red">High priority</Tag> !
                 </div>
                 <div
                     className="notification-item-time"

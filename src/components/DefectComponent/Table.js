@@ -34,7 +34,7 @@ const id = 1;
 const props = {
  name: "files",
   action:
-    "http://localhost:8081/defectservices/uploadMultipleFiles?defectId=" + id,
+    "http://localhost:8085/projectservice/uploadMultipleFiles?defectId=" + id,
   headers: {
     authorization: "authorization-text"
   },
@@ -150,7 +150,7 @@ class TableFilter extends React.Component {
   };
   attachment = id => {
     axios
-      .get("http://localhost:8081/defectservices/listFile/" + id)
+      .get("http://localhost:8085/projectservice/listFile/" + id)
       .then(data => {
         data.data.map(file => {
           console.log(file.fileDownloadUri);
@@ -180,7 +180,7 @@ class TableFilter extends React.Component {
     console.log(commentsu);
     if (this.state.count < 5) {
       axios
-        .post("http://localhost:8081/defectservices/comments", commentsu)
+        .post("http://localhost:8085/projectservice/comments", commentsu)
         .then(res => {
           console.log(res);
           console.log(res.data);
@@ -207,7 +207,7 @@ class TableFilter extends React.Component {
   }
   refreshDefect() {
     axios
-      .get("http://localhost:8085/defectservices/getAllDefects")
+      .get("http://localhost:8085/projectservice/getAllDefects")
       .then(response => {
         console.warn("Refresh Service is working");
         this.setState({ defect: response.data });
@@ -256,7 +256,7 @@ class TableFilter extends React.Component {
       addAttachment: {
         name: "files",
         action:
-          "http://localhost:8085/defectservices/uploadMultipleFiles?defectId=" +
+          "http://localhost:8085/projectservice/uploadMultipleFiles?defectId=" +
           id,
         headers: {
           authorization: "authorization-text"
@@ -299,7 +299,7 @@ class TableFilter extends React.Component {
 
     console.log("dddddddddddddddddddd" + defectList);
     axios
-      .post("http://localhost:8085/defectservices/saveDefect", defectList)
+      .post("http://localhost:8085/projectservice/saveDefect", defectList)
       .then(res => {
         this.getdefectStatus();
         console.log(res.data);
@@ -328,7 +328,7 @@ class TableFilter extends React.Component {
   handleOkView = e => {
     console.log(e);
     axios
-      .post("http://localhost:8085/defectservices/audit/", this.state.audit)
+      .post("http://localhost:8085/projectservice/audit/", this.state.audit)
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -451,7 +451,7 @@ class TableFilter extends React.Component {
 
   remove = id => {
     console.log(id);
-    fetch("http://localhost:8085/defectservices/delete/" + id, {
+    fetch("http://localhost:8085/projectservice/delete/" + id, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json"
@@ -468,7 +468,7 @@ class TableFilter extends React.Component {
   // }
   getComment = id => {
     axios
-      .get("http://localhost:8085/defectservices/comments/" + id)
+      .get("http://localhost:8085/projectservice/comments/" + id)
       .then(resp => {
         let Data = resp.data;
         this.setState({ count: Data.length });
@@ -525,7 +525,7 @@ class TableFilter extends React.Component {
 
   //Getting All defect details
   getdefectStatus() {
-    const url = "http://localhost:8085/defectservices/getAllDefects";
+    const url = "http://localhost:8085/projectservice/getAllDefects";
     axios
       .get(url)
       .then(response =>
@@ -545,7 +545,7 @@ class TableFilter extends React.Component {
   //Deleting defect details
   handleDelete = defectId => {
     axios
-      .delete("http://localhost:8085/defectservices/deleteDefect/" + defectId)
+      .delete("http://localhost:8085/projectservice/deleteDefect/" + defectId)
       .then(console.log(defectId))
       .catch(err => console.log(err));
 
@@ -562,7 +562,7 @@ class TableFilter extends React.Component {
     const _this = this;
     
     axios
-      .get("http://localhost:8085/defectservices/getAllDefects")
+      .get("http://localhost:8085/projectservice/getAllDefects")
       .then(function(response) {
         // handle success
         console.log(response);
